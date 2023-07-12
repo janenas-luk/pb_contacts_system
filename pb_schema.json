@@ -11,7 +11,6 @@
         "type": "text",
         "system": false,
         "required": false,
-        "unique": false,
         "options": {
           "min": null,
           "max": null,
@@ -24,10 +23,10 @@
         "type": "relation",
         "system": false,
         "required": true,
-        "unique": false,
         "options": {
           "collectionId": "adadquft6s38bg8",
           "cascadeDelete": true,
+          "minSelect": null,
           "maxSelect": 1,
           "displayFields": []
         }
@@ -38,7 +37,6 @@
         "type": "file",
         "system": false,
         "required": false,
-        "unique": false,
         "options": {
           "maxSelect": 1,
           "maxSize": 5242880,
@@ -49,9 +47,13 @@
             "image/gif",
             "image/webp"
           ],
-          "thumbs": null
+          "thumbs": null,
+          "protected": false
         }
       }
+    ],
+    "indexes": [
+      "CREATE INDEX `__pb_users_auth__created_idx` ON `users` (`created`)"
     ],
     "listRule": "@request.auth.id != \"\" && @request.auth.username = \"admin\"",
     "viewRule": "@request.auth.id != \"\" && @request.auth.username = \"admin\"",
@@ -81,7 +83,6 @@
         "type": "text",
         "system": false,
         "required": false,
-        "unique": true,
         "options": {
           "min": null,
           "max": null,
@@ -94,7 +95,6 @@
         "type": "text",
         "system": false,
         "required": true,
-        "unique": false,
         "options": {
           "min": null,
           "max": null,
@@ -107,7 +107,6 @@
         "type": "text",
         "system": false,
         "required": true,
-        "unique": false,
         "options": {
           "min": null,
           "max": null,
@@ -120,7 +119,6 @@
         "type": "text",
         "system": false,
         "required": true,
-        "unique": false,
         "options": {
           "min": null,
           "max": null,
@@ -133,13 +131,16 @@
         "type": "text",
         "system": false,
         "required": true,
-        "unique": false,
         "options": {
           "min": null,
           "max": null,
           "pattern": ""
         }
       }
+    ],
+    "indexes": [
+      "CREATE INDEX `_sgv7cbhlqq9svxa_created_idx` ON `offices` (`created`)",
+      "CREATE UNIQUE INDEX \"idx_unique_z07jaw8e\" on \"offices\" (\"name\")"
     ],
     "listRule": "",
     "viewRule": "",
@@ -160,13 +161,16 @@
         "type": "text",
         "system": false,
         "required": true,
-        "unique": true,
         "options": {
           "min": null,
           "max": null,
           "pattern": ""
         }
       }
+    ],
+    "indexes": [
+      "CREATE INDEX `_bakpn5k6ntn68n3_created_idx` ON `divisions` (`created`)",
+      "CREATE UNIQUE INDEX \"idx_unique_hj7brm5w\" on \"divisions\" (\"name\")"
     ],
     "listRule": "",
     "viewRule": "",
@@ -187,13 +191,16 @@
         "type": "text",
         "system": false,
         "required": true,
-        "unique": true,
         "options": {
           "min": null,
           "max": null,
           "pattern": ""
         }
       }
+    ],
+    "indexes": [
+      "CREATE INDEX `_bthy7mqw35rkvvb_created_idx` ON `departments` (`created`)",
+      "CREATE UNIQUE INDEX \"idx_unique_xejrfy93\" on \"departments\" (\"name\")"
     ],
     "listRule": "",
     "viewRule": "",
@@ -214,13 +221,16 @@
         "type": "text",
         "system": false,
         "required": true,
-        "unique": true,
         "options": {
           "min": null,
           "max": null,
           "pattern": ""
         }
       }
+    ],
+    "indexes": [
+      "CREATE INDEX `_57faccb7837p3uh_created_idx` ON `groups` (`created`)",
+      "CREATE UNIQUE INDEX \"idx_unique_30ac1oen\" on \"groups\" (\"name\")"
     ],
     "listRule": "",
     "viewRule": "",
@@ -241,7 +251,6 @@
         "type": "text",
         "system": false,
         "required": true,
-        "unique": false,
         "options": {
           "min": null,
           "max": null,
@@ -254,7 +263,6 @@
         "type": "text",
         "system": false,
         "required": true,
-        "unique": false,
         "options": {
           "min": null,
           "max": null,
@@ -267,7 +275,6 @@
         "type": "text",
         "system": false,
         "required": true,
-        "unique": false,
         "options": {
           "min": null,
           "max": null,
@@ -280,7 +287,6 @@
         "type": "text",
         "system": false,
         "required": false,
-        "unique": false,
         "options": {
           "min": null,
           "max": null,
@@ -293,7 +299,6 @@
         "type": "text",
         "system": false,
         "required": true,
-        "unique": false,
         "options": {
           "min": null,
           "max": null,
@@ -306,10 +311,10 @@
         "type": "relation",
         "system": false,
         "required": true,
-        "unique": false,
         "options": {
           "collectionId": "6pm3nos89zp7y7o",
           "cascadeDelete": false,
+          "minSelect": null,
           "maxSelect": 1,
           "displayFields": []
         }
@@ -320,10 +325,10 @@
         "type": "relation",
         "system": false,
         "required": true,
-        "unique": false,
         "options": {
           "collectionId": "sgv7cbhlqq9svxa",
           "cascadeDelete": false,
+          "minSelect": null,
           "maxSelect": 1,
           "displayFields": [
             "street",
@@ -339,10 +344,10 @@
         "type": "relation",
         "system": false,
         "required": true,
-        "unique": false,
         "options": {
           "collectionId": "bakpn5k6ntn68n3",
           "cascadeDelete": false,
+          "minSelect": null,
           "maxSelect": 1,
           "displayFields": [
             "name"
@@ -355,10 +360,10 @@
         "type": "relation",
         "system": false,
         "required": false,
-        "unique": false,
         "options": {
           "collectionId": "bthy7mqw35rkvvb",
           "cascadeDelete": false,
+          "minSelect": null,
           "maxSelect": 1,
           "displayFields": [
             "name"
@@ -371,10 +376,10 @@
         "type": "relation",
         "system": false,
         "required": false,
-        "unique": false,
         "options": {
           "collectionId": "57faccb7837p3uh",
           "cascadeDelete": false,
+          "minSelect": null,
           "maxSelect": 1,
           "displayFields": []
         }
@@ -385,7 +390,6 @@
         "type": "file",
         "system": false,
         "required": false,
-        "unique": false,
         "options": {
           "maxSelect": 1,
           "maxSize": 5242880,
@@ -395,128 +399,19 @@
             "image/svg+xml",
             "image/webp"
           ],
-          "thumbs": []
+          "thumbs": [],
+          "protected": false
         }
       }
+    ],
+    "indexes": [
+      "CREATE INDEX `_b2oym7fr4tkhpsr_created_idx` ON `employees` (`created`)"
     ],
     "listRule": "",
     "viewRule": "",
     "createRule": "@request.auth.id != \"\" && @request.auth.permissions_id.edit_employees = true",
     "updateRule": "@request.auth.id != \"\" && @request.auth.permissions_id.edit_employees = true",
     "deleteRule": "@request.auth.id != \"\" && @request.auth.permissions_id.delete_employees = true",
-    "options": {}
-  },
-  {
-    "id": "adadquft6s38bg8",
-    "name": "user_permissions",
-    "type": "base",
-    "system": false,
-    "schema": [
-      {
-        "id": "vqhfdxwp",
-        "name": "edit_employees",
-        "type": "bool",
-        "system": false,
-        "required": false,
-        "unique": false,
-        "options": {}
-      },
-      {
-        "id": "2a865yfa",
-        "name": "delete_employees",
-        "type": "bool",
-        "system": false,
-        "required": false,
-        "unique": false,
-        "options": {}
-      },
-      {
-        "id": "eujhrmkk",
-        "name": "edit_offices",
-        "type": "bool",
-        "system": false,
-        "required": false,
-        "unique": false,
-        "options": {}
-      },
-      {
-        "id": "nxkmmfta",
-        "name": "delete_offices",
-        "type": "bool",
-        "system": false,
-        "required": false,
-        "unique": false,
-        "options": {}
-      },
-      {
-        "id": "m259ynsp",
-        "name": "edit_structure",
-        "type": "bool",
-        "system": false,
-        "required": false,
-        "unique": false,
-        "options": {}
-      },
-      {
-        "id": "ops7pnpa",
-        "name": "delete_structure",
-        "type": "bool",
-        "system": false,
-        "required": false,
-        "unique": false,
-        "options": {}
-      },
-      {
-        "id": "xac7kfle",
-        "name": "read_permissions",
-        "type": "bool",
-        "system": false,
-        "required": false,
-        "unique": false,
-        "options": {}
-      },
-      {
-        "id": "jdvuer59",
-        "name": "edit_permissions",
-        "type": "bool",
-        "system": false,
-        "required": false,
-        "unique": false,
-        "options": {}
-      },
-      {
-        "id": "wpmvxtdn",
-        "name": "delete_permissions",
-        "type": "bool",
-        "system": false,
-        "required": false,
-        "unique": false,
-        "options": {}
-      },
-      {
-        "id": "rygzeuap",
-        "name": "edit_companies",
-        "type": "bool",
-        "system": false,
-        "required": false,
-        "unique": false,
-        "options": {}
-      },
-      {
-        "id": "edhkghls",
-        "name": "delete_companies",
-        "type": "bool",
-        "system": false,
-        "required": false,
-        "unique": false,
-        "options": {}
-      }
-    ],
-    "listRule": "@request.auth.id != \"\" && @request.auth.permissions_id.read_permissions = true",
-    "viewRule": "@request.auth.id != \"\" && @request.auth.permissions_id.read_permissions = true",
-    "createRule": "@request.auth.id != \"\" && @request.auth.permissions_id.edit_permissions = true",
-    "updateRule": "@request.auth.id != \"\" && @request.auth.permissions_id.edit_permissions = true",
-    "deleteRule": "@request.auth.id != \"\" && @request.auth.permissions_id.delete_permissions = true",
     "options": {}
   },
   {
@@ -531,10 +426,10 @@
         "type": "relation",
         "system": false,
         "required": true,
-        "unique": false,
         "options": {
           "collectionId": "sgv7cbhlqq9svxa",
           "cascadeDelete": true,
+          "minSelect": null,
           "maxSelect": 1,
           "displayFields": []
         }
@@ -545,14 +440,17 @@
         "type": "relation",
         "system": false,
         "required": true,
-        "unique": false,
         "options": {
           "collectionId": "bakpn5k6ntn68n3",
           "cascadeDelete": true,
+          "minSelect": null,
           "maxSelect": 1,
           "displayFields": []
         }
       }
+    ],
+    "indexes": [
+      "CREATE INDEX `_zzim4v132ojclwp_created_idx` ON `offices_divisions` (`created`)"
     ],
     "listRule": "",
     "viewRule": "",
@@ -573,13 +471,16 @@
         "type": "text",
         "system": false,
         "required": true,
-        "unique": true,
         "options": {
           "min": null,
           "max": null,
           "pattern": ""
         }
       }
+    ],
+    "indexes": [
+      "CREATE INDEX `_6pm3nos89zp7y7o_created_idx` ON `companies` (`created`)",
+      "CREATE UNIQUE INDEX \"idx_unique_0zy2rss8\" on \"companies\" (\"name\")"
     ],
     "listRule": "",
     "viewRule": "",
@@ -600,10 +501,10 @@
         "type": "relation",
         "system": false,
         "required": true,
-        "unique": false,
         "options": {
           "collectionId": "6pm3nos89zp7y7o",
           "cascadeDelete": true,
+          "minSelect": null,
           "maxSelect": 1,
           "displayFields": []
         }
@@ -614,14 +515,17 @@
         "type": "relation",
         "system": false,
         "required": true,
-        "unique": false,
         "options": {
           "collectionId": "sgv7cbhlqq9svxa",
           "cascadeDelete": true,
+          "minSelect": null,
           "maxSelect": 1,
           "displayFields": []
         }
       }
+    ],
+    "indexes": [
+      "CREATE INDEX `_69msfhns5ee63rg_created_idx` ON `companies_offices` (`created`)"
     ],
     "listRule": "",
     "viewRule": "",
@@ -642,10 +546,10 @@
         "type": "relation",
         "system": false,
         "required": true,
-        "unique": false,
         "options": {
           "collectionId": "bakpn5k6ntn68n3",
           "cascadeDelete": true,
+          "minSelect": null,
           "maxSelect": 1,
           "displayFields": []
         }
@@ -656,14 +560,17 @@
         "type": "relation",
         "system": false,
         "required": true,
-        "unique": false,
         "options": {
           "collectionId": "bthy7mqw35rkvvb",
           "cascadeDelete": true,
+          "minSelect": null,
           "maxSelect": 1,
           "displayFields": []
         }
       }
+    ],
+    "indexes": [
+      "CREATE INDEX `_ter9l3qqq9aqgj2_created_idx` ON `divisions_departments` (`created`)"
     ],
     "listRule": "",
     "viewRule": "",
@@ -684,10 +591,10 @@
         "type": "relation",
         "system": false,
         "required": true,
-        "unique": false,
         "options": {
           "collectionId": "bthy7mqw35rkvvb",
           "cascadeDelete": true,
+          "minSelect": null,
           "maxSelect": 1,
           "displayFields": []
         }
@@ -698,20 +605,120 @@
         "type": "relation",
         "system": false,
         "required": true,
-        "unique": false,
         "options": {
           "collectionId": "57faccb7837p3uh",
           "cascadeDelete": true,
+          "minSelect": null,
           "maxSelect": 1,
           "displayFields": []
         }
       }
+    ],
+    "indexes": [
+      "CREATE INDEX `_tc5kfi49ge03emy_created_idx` ON `departments_groups` (`created`)"
     ],
     "listRule": "",
     "viewRule": "",
     "createRule": "@request.auth.id != \"\" && @request.auth.permissions_id.edit_structure = true",
     "updateRule": "@request.auth.id != \"\" && @request.auth.permissions_id.edit_structure = true",
     "deleteRule": "@request.auth.id != \"\" && @request.auth.permissions_id.delete_structure = true",
+    "options": {}
+  },
+  {
+    "id": "adadquft6s38bg8",
+    "name": "user_permissions",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "vqhfdxwp",
+        "name": "edit_employees",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "options": {}
+      },
+      {
+        "id": "2a865yfa",
+        "name": "delete_employees",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "options": {}
+      },
+      {
+        "id": "eujhrmkk",
+        "name": "edit_offices",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "options": {}
+      },
+      {
+        "id": "nxkmmfta",
+        "name": "delete_offices",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "options": {}
+      },
+      {
+        "id": "m259ynsp",
+        "name": "edit_structure",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "options": {}
+      },
+      {
+        "id": "ops7pnpa",
+        "name": "delete_structure",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "options": {}
+      },
+      {
+        "id": "jdvuer59",
+        "name": "edit_permissions",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "options": {}
+      },
+      {
+        "id": "wpmvxtdn",
+        "name": "delete_permissions",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "options": {}
+      },
+      {
+        "id": "rygzeuap",
+        "name": "edit_companies",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "options": {}
+      },
+      {
+        "id": "edhkghls",
+        "name": "delete_companies",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "options": {}
+      }
+    ],
+    "indexes": [
+      "CREATE INDEX `_adadquft6s38bg8_created_idx` ON `user_permissions` (`created`)"
+    ],
+    "listRule": "@request.auth.id != \"\"",
+    "viewRule": "@request.auth.id != \"\"",
+    "createRule": "@request.auth.id != \"\" && @request.auth.permissions_id.edit_permissions = true",
+    "updateRule": "@request.auth.id != \"\" && @request.auth.permissions_id.edit_permissions = true",
+    "deleteRule": "@request.auth.id != \"\" && @request.auth.permissions_id.delete_permissions = true",
     "options": {}
   }
 ]
